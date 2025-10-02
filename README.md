@@ -1,7 +1,7 @@
 # The Twist
 
 > [!IMPORTANT]
-> This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project!
+> This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project!**
 
 🌀 The Bender Twist is a [free](https://en.wikipedia.org/wiki/Free_software), portable platform which augments the functional capabilities of LT-series amps made by a certain guitar brand that rhymes with "bender" and names products after horses.
 
@@ -22,7 +22,17 @@ The two main parts within this codebase are the **backend server**–controlling
 
 ## 📺 Demo Video
 
+https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
 
+## 🖼️ Overview
+
+In the alpha version, replace the Raspberry Pi with a Windows machine and AP with LAN WiFi.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/58ce5217-b79b-4d99-894d-8866c4a96b48">
+  <source media="(prefers-color-scheme: light)" srcset="[light-mode-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
+  <img alt="Fallback image description" src="[default-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
+</picture>
 
 ## 🚀 Getting Started
 
@@ -46,16 +56,6 @@ The two main parts within this codebase are the **backend server**–controlling
    ```
 2. Connect to the WiFi network "the-twist" and you're set!
 
-## 🖼️ Overview
-
-In the alpha version, replace the Raspberry Pi with a Windows machine and AP with LAN WiFi.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/58ce5217-b79b-4d99-894d-8866c4a96b48">
-  <source media="(prefers-color-scheme: light)" srcset="[light-mode-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
-  <img alt="Fallback image description" src="[default-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
-</picture>
-
 ## 💻 Developing
 
 To start the backend manually, run:
@@ -75,4 +75,3 @@ npm run build
 ## 🗺️ Roadmap
 
 Planned features, known bugs, and the overall project roadmap are coorinated using a combination of GitHub's Issues and Projects. The project [tab](https://github.com/bendertools/projects) is where more broad, long-term, and important work is tracked, while day-to-day development progress is reserved for Issues and Pull Requests.
-

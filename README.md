@@ -1,7 +1,7 @@
 # The Twist
 
 > [!IMPORTANT]
-> This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project and keeps you in the loop!**
+> This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project!
 
 🌀 The Bender Twist is a [free](https://en.wikipedia.org/wiki/Free_software), portable platform which augments the functional capabilities of LT-series amps made by a certain guitar brand that rhymes with "bender" and names products after horses.
 
@@ -13,10 +13,16 @@ The two main parts within this codebase are the **backend server**–controlling
 
 ## ✨ Current features:
 
-- Device connection configuration
-- Device preset remote control
-- Preset (footswitch) playlist management
-- Light/dark UI modes
+- 🔌 Device connection configuration
+  - 📊 Viewing stats (memory, CPu usage)
+- 📡 Device preset remote control
+- 🕹️ Preset (footswitch) playlist management
+- 📱 Mobile friendly UI
+- 🌗 Light/dark control panel themes
+
+## 📺 Demo Video
+
+
 
 ## 🚀 Getting Started
 

@@ -1,5 +1,8 @@
 # The Twist
 
+> [!WARNING]
+> nixos tooling is wip and doesnt really work rn. please check back later
+
 > [!IMPORTANT]
 > This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project!**
 

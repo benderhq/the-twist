@@ -70,6 +70,22 @@ To build new changes to the Svelte frontend, run. Unfortunately, due to no amp s
 ```bash
 cd frontend
 npm run build
+
+To build the SD installer file, please run the following:
+
+```
+nix build \
+  --system aarch64-linux \
+  --max-jobs 0 \
+  --builders "ssh://eu.nixbuild.net aarch64-linux - 100 1 big-parallel,benchmark" \
+  .#installerImages.rpi02
+
+sudo dd if=/dev/zero of=/dev/sda bs=8192
+
+zstd -dc result/sd-image/nixos-image-rpi02-uboot.img.zst | sudo dd of=/dev/sda bs=4M conv=fsync status=progress
+
+sudo umount /dev/sda*; sudo eject /dev/sda
+```
 ```
 
 ## 🗺️ Roadmap

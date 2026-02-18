@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
    <td colspan="1"><ul>
      <li>1x USB -> MicroUSB Power Cable</li>
             <li>1x MicroSD Card Reader (and/or 1x SD Card Adapter)</li>
-            <li><i>Completely Optional: 1x MiniHDMI -> HDMI Cable</i></li>
+            <li><i>Optional: 1x MiniHDMI -> HDMI Cable</i></li>
     </ul></td>
   </tr>
   <tr>
@@ -69,11 +69,32 @@ https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
 
 ## The Layout
 
-This repository contains the key functionality behind the twist, which is designed to be combined with other add-ons that may be developed in the future (think rechargeable battery support, etc.)
+This repository contains almost everything related to The Twist, as well asthe  various add-ons that may be developed in the future.
 
-The two main parts within this codebase are the **backend server**–controlling access point, API, and Amp connectivity functionalities–and the **frontend control panel**, which provides a user-friendly and easily accessible interface for using and interacting with your Twist device. An overview of both of these parts can be found in the respository's [Wiki Documentation](/wiki).
-
-## Developing Hints
+```bash
+~/the-twist
+├── .github # automated builds & CI
+├── 3d # 3d-print files for thetwist's case options (soon)
+├── addons # battery support, speaker, screens (soon)
+├── backend # api server controlling amp connectivity
+│   ├── ltamp # vendored ltamp.py package
+│   ├── app.py # fastapi entry point
+│   └── default.nix 
+├── docs # documentation markdown
+├── frontend # svelte control panel interface
+│   ├── public # assets
+│   ├── src
+│   │   ├── components # reusable ui parts
+│   │   ├── lib # utils and lil things
+│   │   ├── pages # SPA routes
+│   │   └── stores # event/state management
+│   └── default.nix 
+├── portal # wifi/WAP configuration server
+├── site # marketing website
+├── flake.nix
+└── flake.lock
+```
+## Development
 
 To start the backend manually, run:
 
@@ -113,5 +134,6 @@ Default SSH Credentials
 ## Roadmap
 
 Planned features, known bugs, and the overall project roadmap are coorinated using a combination of GitHub's Issues and Projects. The project [tab](https://github.com/bendertools/projects) is where more broad, long-term, and important work is tracked, while day-to-day development progress is reserved for Issues and Pull Requests.
+
 
 

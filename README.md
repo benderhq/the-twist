@@ -2,16 +2,14 @@
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/benderhq/the-twist/ci-workflow)
 
-https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
-
-
 > [!IMPORTANT]
 > The Twist, whose components are housed by this repository, is still in alpha/prototype stages. Expect frequent breaking changes (but also enthusiastic support) until the version number reaches 1.0.0
 
-
-
 The Bender Twist is a free, portable platform which augments the functionality of the LT-series amps made by a guitar company that rhymes with "bender".
 
+# Trailer
+
+https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
 
 ## Quick Start
 
@@ -27,7 +25,7 @@ The Bender Twist is a free, portable platform which augments the functionality o
     </ul></td>
    <td colspan="1"><ul>
      <li>1x USB -> MicroUSB Power Cable</li>
-            <li>1x External MicroSD Card Reader (and/or 1x SD Card Adapter)</li>
+            <li>1x MicroSD Card Reader (and/or 1x SD Card Adapter)</li>
             <li><i>Completely Optional: 1x MiniHDMI -> HDMI Cable</i></li>
     </ul></td>
   </tr>
@@ -115,4 +113,5 @@ Default SSH Credentials
 ## Roadmap
 
 Planned features, known bugs, and the overall project roadmap are coorinated using a combination of GitHub's Issues and Projects. The project [tab](https://github.com/bendertools/projects) is where more broad, long-term, and important work is tracked, while day-to-day development progress is reserved for Issues and Pull Requests.
+
 

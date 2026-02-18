@@ -1,65 +1,81 @@
-# The Twist
+# The Twist 🔀
 
-> [!WARNING]
-> nixos tooling is wip and doesnt really work rn. please check back later
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/benderhq/the-twist/ci-workflow)
+
+https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
+
 
 > [!IMPORTANT]
-> This repository is still in the prototype stage with many of The Twist's components, resources, and documentation being WIP. **Nevertheless, leaving a star (⭐) helps the project!**
+> The Twist, whose components are housed by this repository, is still in alpha/prototype stages. Expect frequent breaking changes (but also enthusiastic support) until the version number reaches 1.0.0
 
-🌀 The Bender Twist is a [free](https://en.wikipedia.org/wiki/Free_software), portable platform which augments the functional capabilities of LT-series amps made by a certain guitar brand that rhymes with "bender" and names products after horses.
 
-## 📌 This Repository
+
+The Bender Twist is a free, portable platform which augments the functionality of the LT-series amps made by a guitar company that rhymes with "bender".
+
+
+## Quick Start
+
+<table>
+  <tr>
+    <th colspan="2">Required Materials</th>
+  </tr>
+  <tr>
+    <td colspan="1"><ul>
+      <li>1x MicroSD Card (>8GB)</li>
+            <li>1x Raspberry Pi Zero 2w</li>
+            <li>1x MicroUSB -> MicroUSB Data Cable</li>
+    </ul></td>
+   <td colspan="1"><ul>
+     <li>1x USB -> MicroUSB Power Cable</li>
+            <li>1x External MicroSD Card Reader (and/or 1x SD Card Adapter)</li>
+            <li><i>Completely Optional: 1x MiniHDMI -> HDMI Cable</i></li>
+    </ul></td>
+  </tr>
+  <tr>
+    <th> Instructions</th>
+<th>Setup Diagram</th>
+  </tr>
+   <tr>
+    <td><ol ><li>Go to <a href="/releases">Releases</a> and download a .img file which matches your target device (Raspberry Pi Zero 2w)</li></ol></td>
+         <td rowspan="4"><picture><source media="(prefers-color-scheme: dark)" width="700px" srcset="https://github.com/user-attachments/assets/58ce5217-b79b-4d99-894d-8866c4a96b48"><source media="(prefers-color-scheme: light)" width="700px" srcset="[light-mode-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)"><img alt="Fallback image description" width="700px" src="[default-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)"></picture></td>
+
+  </tr>
+   <tr>
+     <td><ol start="2"><li>Use a tool such as the Raspberry Pi Imager, Rufus, or `zstd` to flash the image file onto your microSD card.</li></ol></td>
+  </tr>
+     <tr>
+     <td><ol start="3"><li>Unmount, eject, and unplug microSD before inserting it into target device.</li></ol></td>
+  </tr>
+     <tr>
+     <td><ol start="4"><li>Supply power to target device.</li></ol></td>
+  </tr>
+</table>
+
+### Usage
+
+- Connect to local WAP (wireless access point)
+  - Default AP credentials:
+    - SSID: the-twist
+    - Password: bendernotfender
+  - Access Network Management Captive Portal
+    - Toggle/Configure Wifi or AP modes/credentials
+    - Automatically reconfigures control panel as default portal
+  - Redirect to mobile-friendly Control Panel Interface with:
+    - Amp connection manager with:
+      - Soon: Support for all models
+    - Amp stat viewing (memory, CPU usage) with:
+      - Soon: Dynamic graphs
+    - Amp preset remote control
+      - Footswitch playlist management
+    - Light/dark mode color themes
+
+## The Layout
 
 This repository contains the key functionality behind the twist, which is designed to be combined with other add-ons that may be developed in the future (think rechargeable battery support, etc.)
 
 The two main parts within this codebase are the **backend server**–controlling access point, API, and Amp connectivity functionalities–and the **frontend control panel**, which provides a user-friendly and easily accessible interface for using and interacting with your Twist device. An overview of both of these parts can be found in the respository's [Wiki Documentation](/wiki).
 
-## ✨ Current features:
-
-- 🔌 Device connection configuration
-  - 📊 Viewing stats (memory, CPu usage)
-- 📡 Device preset remote control
-- 🕹️ Preset (footswitch) playlist management
-- 📱 Mobile friendly UI
-- 🌗 Light/dark control panel themes
-
-## 📺 Demo Video
-
-https://github.com/user-attachments/assets/ab2fa6d3-ed6a-48c6-a2fd-b2e2458a9679
-
-## 🖼️ Overview
-
-In the alpha version, replace the Raspberry Pi with a Windows machine and AP with LAN WiFi.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/58ce5217-b79b-4d99-894d-8866c4a96b48">
-  <source media="(prefers-color-scheme: light)" srcset="[light-mode-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
-  <img alt="Fallback image description" src="[default-image.png](https://github.com/user-attachments/assets/c4c7d9b0-8648-43ab-8645-886d6eda53cf)">
-</picture>
-
-## 🚀 Getting Started
-
-> [!NOTE]
-> Everything in this repository is designed and tested to be run on Windows (at the moment). This doesn't mean it won't work on Linux platforms or devices, just that they haven't been fully tested
-
-<!-- > Everything in this repository is designed and tested to be run on a Raspberry Pi Zero 2W. This doesn't mean it won't work on other (primarily Linux) platforms or devices, just that we don't currently support them. -->
-
-
-1. Install The Twist on your computer (Windows or Pi)
-   <!-- a. Flash the Official Image (Recommended)
-   Go to the latest [release](/releases), download the "twist-pi-official-image-v{semver}.img.xz" file, and follow the [flashing guide](/FLASHING.md) to get it on your pi!-->
-   b. Alternatively: DIY install in terminal
-   ```bash
-   git clone https://github.com/bendertools/twist-pi.git
-   cd twist-pi/frontend 
-   npm ci && npm run build
-   cd ../backend
-   pip install -r requirements.txt
-   uvicorn app:app --port 8000 --host 0.0.0.0
-   ```
-2. Connect to the WiFi network "the-twist" and you're set!
-
-## 💻 Developing
+## Developing Hints
 
 To start the backend manually, run:
 
@@ -91,6 +107,12 @@ sudo umount /dev/sda*; sudo eject /dev/sda
 ```
 ```
 
-## 🗺️ Roadmap
+Default SSH Credentials
+
+- Hostname: twist.local
+- Password: bendernotfender
+
+## Roadmap
 
 Planned features, known bugs, and the overall project roadmap are coorinated using a combination of GitHub's Issues and Projects. The project [tab](https://github.com/bendertools/projects) is where more broad, long-term, and important work is tracked, while day-to-day development progress is reserved for Issues and Pull Requests.
+

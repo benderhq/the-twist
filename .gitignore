@@ -1,3 +1,10 @@
+# dev
 .wakatime-project
-result/**/**.*
+.vscode
+
+# nix build output
+result/
+*.img
+
+# secrets stuff
 .env

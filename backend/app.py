@@ -18,8 +18,10 @@ import asyncio
 
 app = FastAPI(title="Twist API")
 
-DATABASE_URL = "sqlite:///twist.db"
-engine = create_engine(DATABASE_URL, echo=False)
+DATA_DIR = os.environ.get("DATA_DIR", "/var/lib/the-twist-api")
+
+DATABASE_URL = f"sqlite:///{DATA_DIR}/db.sqlite3"
+engine = create_engine(DATABASE_URL, echo=False, connect_args={"check_same_thread": False},)
 
 # websocket stuff
 
@@ -719,11 +721,18 @@ def skip_backward_playlist():
 
 @app.get("/")
 def index():
-    return FileResponse("../frontend/dist/index.html")
+    return FileResponse(STATIC_PATH + "/index.html")
 
 @app.get("/api/version")
 def get_version():
     with open("VERSION") as f:
         return {"version": f.read().strip()}
 
-app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
+
+STATIC_PATH = os.environ["STATIC_PATH"]
+
+app.mount(
+    "/",
+    StaticFiles(directory=STATIC_PATH, html=True),
+    name="static",
+)

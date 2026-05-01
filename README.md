@@ -108,6 +108,7 @@ To build new changes to the Svelte frontend, run. Unfortunately, due to no amp s
 ```bash
 cd frontend
 npm run build
+```
 
 To build the SD installer file, please run the following:
 

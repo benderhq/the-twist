@@ -124,7 +124,6 @@ zstd -dc result/sd-image/nixos-image-rpi02-uboot.img.zst | sudo dd of=/dev/sda b
 
 sudo umount /dev/sda*; sudo eject /dev/sda
 ```
-```
 
 Default SSH Credentials
 

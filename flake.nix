@@ -44,6 +44,21 @@
 
           users.groups.twistapi = { };
 
+          systemd.network.networks."10-usb-gadget" = {
+            matchConfig.Name = "enp193s0f3u1";
+
+            address = [ "192.168.7.1/24" ];
+
+            networkConfig = {
+              DHCP = "no";
+              IPv6AcceptRA = "no";
+            };
+
+            linkConfig = {
+              RequiredForOnline = false;
+            };
+          };
+
           systemd.services.the-twist-api = {
             description = "Twist backend";
             wantedBy = [ "multi-user.target" ];
@@ -75,7 +90,6 @@
             };
           };
 
-
           services.openssh = {
             enable = true;
 
@@ -101,12 +115,16 @@
           ];
 
           security.sudo.wheelNeedsPassword = false;
+          systemd.network.enable = true;
 
           networking = {
             hostName = "rpi02w";
             firewall.allowedTCPPorts = [ 8000 ];
             networkmanager = {
               enable = true;
+              unmanaged = [
+                "enp193s0f3u1"
+              ];
 
               ensureProfiles.profiles = {
                 "my-wifi" = {
@@ -115,38 +133,38 @@
                     interface-name = "wlan0";
                     type = "wifi";
                   };
-
+                
                   wifi = {
                     mode = "infrastructure";
                     ssid = "this_wifi_name_is_meta";
                   };
-
+                
                   wifi-security = {
                     key-mgmt = "wpa-psk";
                     psk = "this_wifi_password_is_super_insecure_so_i_pray_this_isnt_your_password_otherwise_you_should_change_it";
                   };
-
+                
                   ipv4.method = "auto";
                   ipv6.method = "auto";
                 };
-                "my-ap" = {
-                  connection = {
-                    id = "my-ap";
-                    interface-name = "wlan0";
-                    type = "wifi";
-                    autoconnect = true;
-                  };
-                  wifi = {
-                    mode = "ap";
-                    ssid = "MyRPI-AP";
-                  };
-                  wifi-security = {
-                    key-mgmt = "wpa-psk";
-                    psk = "apPassword123";
-                  };
-                  ipv4.method = "shared";
-                  ipv6.method = "ignore";
-                };
+                # "my-ap" = {
+                #   connection = {
+                #     id = "my-ap";
+                #     interface-name = "wlan0";
+                #     type = "wifi";
+                #     autoconnect = true;
+                #   };
+                #   wifi = {
+                #     mode = "ap";
+                #     ssid = "MyRPI-AP1";
+                #   };
+                #   wifi-security = {
+                #     key-mgmt = "wpa-psk";
+                #     psk = "apPassword123";
+                #   };
+                #   ipv4.method = "shared";
+                #   ipv6.method = "ignore";
+                # };
               };
             };
           };

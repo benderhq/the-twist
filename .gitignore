@@ -4,6 +4,7 @@
 
 # nix build output
 result/
+result
 *.img
 
 # secrets stuff

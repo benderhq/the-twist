@@ -101,6 +101,7 @@ To start the backend manually, run:
 ```bash
 cd backend
 uvicorn app:app --host 0.0.0.0 --port 80 --reload
+cd ../
 ```
 
 To build new changes to the Svelte frontend, run. Unfortunately, due to no amp simulator being built for LtAmp.py (that maintainer should really get on that!!), you may have to build every time you make changes. Sorry :(
